@@ -1,12 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
       "source": "/:creator/:hash",
-      "destination": "/api/redirect?hash=$hash"
+      "destination": "/api/redirect?hash=:hash"
     },
     {
       "source": "/(.*)",
