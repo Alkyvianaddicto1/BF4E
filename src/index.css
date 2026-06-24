@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #6b38d4;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #8455ef;
+  --color-on-primary-container: #fffbff;
+  --color-inverse-primary: #d0bcff;
+  
+  --color-secondary: #a53b22;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fe7d5e;
+  --color-on-secondary-container: #711601;
+  
+  --color-tertiary: #18684d;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #378265;
+  --color-on-tertiary-container: #f5fff7;
+  
+  --color-background: #fcf8ff;
+  --color-on-background: #181445;
+  
+  --color-surface: #fcf8ff;
+  --color-surface-dim: #dad6ff;
+  --color-surface-bright: #fcf8ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f6f2ff;
+  --color-surface-container: #efebff;
+  --color-surface-container-high: #e9e5ff;
+  --color-surface-container-highest: #e3dfff;
+  --color-on-surface: #181445;
+  --color-on-surface-variant: #494454;
+  --color-inverse-surface: #2d2a5b;
+  --color-inverse-on-surface: #f3eeff;
+  
+  --color-outline: #7b7486;
+  --color-outline-variant: #cbc3d7;
+  
+  --color-primary-fixed: #e9ddff;
+  --color-primary-fixed-dim: #d0bcff;
+  --color-on-primary-fixed: #23005c;
+  --color-on-primary-fixed-variant: #5516be;
+  
+  --color-secondary-fixed: #ffdad2;
+  --color-secondary-fixed-dim: #ffb4a3;
+  --color-on-secondary-fixed: #3d0700;
+  --color-on-secondary-fixed-variant: #84240d;
+  
+  --color-tertiary-fixed: #a6f2cf;
+  --color-tertiary-fixed-dim: #8bd6b4;
+  --color-on-tertiary-fixed: #002115;
+  --color-on-tertiary-fixed-variant: #00513a;
+  
+  --color-surface-variant: #e3dfff;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+  font-family: var(--font-sans);
+}
+
+.font-headline {
+  font-family: var(--font-headline);
+}

@@ -1,0 +1,6 @@
+{
+  "name": "BF4E - Bestie Quizzes",
+  "description": "An interactive friendship quiz app. Create quizzes about yourself, share links, and test who knows you best.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
