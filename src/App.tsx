@@ -266,7 +266,7 @@ export default function App() {
 
       // 2. Trigger your deployed Python server!
       // Replace this URL with wherever you host your Python API
-      const pythonApiUrl = "https://your-deployed-python-server.com/api/shorten"; 
+      const pythonApiUrl = "https://ZfluffySpicy.pythonanywhere.com"; 
       
       const response = await fetch(pythonApiUrl, {
         method: "POST",
@@ -329,6 +329,7 @@ export default function App() {
         recentResponderName={lastSimulatedResp?.responderName}
         recentScore={lastSimulatedResp?.score}
         recentQuizTitle={activeQuizObj?.title}
+        onProfileClick={() => handleTabChange("rankings")}
       />
 
       {/* 2. Main Page views selector */}

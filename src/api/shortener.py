@@ -12,7 +12,7 @@ app = FastAPI(title="Quiz Link Shortener")
 # Allow your React app to talk to this Python server
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, change to your actual frontend domain
+    allow_origins=["https://bf4e.vercel.app"],  # In production, change to your actual frontend domain
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -87,7 +87,7 @@ def redirect_to_quiz(creator: str, hash_id: str):
     if result:
         encoded_data = result[0]
         # REPLACE THIS with your actual React app's domain (e.g., https://myquiz.vercel.app)
-        frontend_base_url = "http://localhost:5173" 
+        frontend_base_url = "https://bf4e.vercel.app" 
         
         # Redirect the user to the frontend with the databaseless payload attached
         return RedirectResponse(url=f"{frontend_base_url}/?quiz={encoded_data}")

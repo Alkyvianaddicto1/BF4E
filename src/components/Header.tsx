@@ -14,6 +14,7 @@ interface HeaderProps {
   recentResponderName?: string;
   recentScore?: number;
   recentQuizTitle?: string;
+  onProfileClick?: ()=> void;
 }
 
 export default function Header({
@@ -24,8 +25,14 @@ export default function Header({
   onToggleNotifications,
   recentResponderName,
   recentScore,
-  recentQuizTitle
+  recentQuizTitle,
+  onProfileClick
 }: HeaderProps) {
+  const handleProfileClick = () => {
+    if (window.innerWidth >= 768) {
+      onProfileClick?.();
+    }
+  }
   return (
     <header className="bg-surface/85 backdrop-blur-xl sticky top-0 z-40 border-b border-surface-container-high shadow-sm">
       <div className="flex justify-between items-center w-full px-4 md:px-8 max-w-7xl mx-auto h-16">
@@ -83,7 +90,9 @@ export default function Header({
 
           {/* Account Profile Mock */}
           <div className="flex items-center gap-1.5">
-            <button className="p-2 rounded-full text-on-surface-variant hover:bg-primary-container/10 active:scale-95 transition-colors cursor-pointer">
+            <button 
+              onClick={handleProfileClick}
+              className="p-2 rounded-full text-on-surface-variant hover:bg-primary-container/10 active:scale-95 transition-colors cursor-pointer">
               <UserIcon className="w-5 h-5" />
             </button>
           </div>
