@@ -266,7 +266,7 @@ export default function App() {
 
       // 2. Trigger your deployed Python server!
       // Replace this URL with wherever you host your Python API
-      const pythonApiUrl = "https://ZfluffySpicy.pythonanywhere.com/api/shorten"; 
+      const pythonApiUrl = "/api/shorten"; 
       
       const response = await fetch(pythonApiUrl, {
         method: "POST",
