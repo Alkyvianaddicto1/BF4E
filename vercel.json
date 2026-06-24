@@ -2,7 +2,11 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://ZfluffySpicy.pythonanywhere.com/api/$1"
+      "destination": "https://zfluffyspicy.pythonanywhere.com/api/$1"
+    },
+    {
+      "source": "/:creator/:hash",
+      "destination": "https://zfluffyspicy.pythonanywhere.com/:creator/:hash"
     },
     {
       "source": "/(.*)",
