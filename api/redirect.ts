@@ -1,6 +1,11 @@
 import { kv } from '@vercel/kv';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
+// Define the shape of the data stored in Redis
+interface QuizData {
+  data: string;
+}
+
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const { hash } = req.query;
 
@@ -9,15 +14,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    // Fetch the massive base64 string back from Redis
-    const encoded_data = await kv.get(`link:${hash}`);
+    // Explicitly typed return value
+    const quizEntry = await kv.get<QuizData>(`link:${hash}`);
 
-    if (!encoded_data) {
+    if (!quizEntry) {
       return res.status(404).send('Quiz link not found or expired!');
     }
 
-    // Immediately redirect the browser to the React app with the data attached!
-    res.redirect(`/?quiz=${encoded_data}`);
+    res.redirect(`/?quiz=${quizEntry.data}`);
     
   } catch (error) {
     console.error("Redis Error:", error);
