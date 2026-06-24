@@ -266,9 +266,9 @@ export default function App() {
 
       // 2. Trigger your deployed Python server!
       // Replace this URL with wherever you host your Python API
-      const pythonApiUrl = "/api/shorten"; 
+      const shortenApiUrl = "/api/shorten"; 
       
-      const response = await fetch(pythonApiUrl, {
+      const response = await fetch(shortenApiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -279,12 +279,11 @@ export default function App() {
 
       if (!response.ok) throw new Error("Failed to shorten link");
 
-      // 3. Get the short path (e.g., "/Alex/a1b2c3d4") back from Python
+      // 3. Get the short path (e.g., "/Alex/a1b2c3d4") back from Vercel KV
       const data = await response.json();
       
-      // 4. Combine your API domain with the short path to make the final link
-      // Note: Because Python handles the redirect, the copied link actually points to the Python server first!
-      const finalShareUrl = `https://your-deployed-python-server.com${data.short_path}`;
+      // 4. Combine your live domain with the short path to make the final link
+      const finalShareUrl = `${window.location.origin}${data.short_path}`;
       
       await navigator.clipboard.writeText(finalShareUrl);
       
